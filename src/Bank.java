@@ -10,15 +10,6 @@ public class Bank {
     public static void welcome() {
         System.out.println("Welcome to MyBank! Please use the options below for your banking.");
         UserMenu.displayUserMenu();
-//        System.out.println("Thank you for banking with MyBank!");
-//        openAccount("john", "john@gmail.com", "3332223333", 10);
-//        openAccount("sdfdsd", "johnss@gmail.com", "2233223322", 10);
-//        depositFund("123456", 100);
-//        System.out.println(bankAccounts.get(0).getBalance());
-//        System.out.println(bankAccounts);
-//        System.out.println(closeAccount("12345"));
-//        System.out.println(closeAccount("123456"));
-//        System.out.println(bankAccounts);
     }
 
     public static boolean openAccount(String name, String email, String phone, double initialDeposit) {
@@ -42,6 +33,12 @@ public class Bank {
         findAccount(accountNumber);
         if (queriedAccount == null) return -1;
         return queriedAccount.getBalance();
+    }
+
+    public static String getTransactionHistory(String accountNumber) {
+        findAccount(accountNumber);
+        if (queriedAccount == null) return "";
+        return queriedAccount.getTransactionHistory();
     }
 
     public static String getMyAccountNumber(String email) {

@@ -171,6 +171,7 @@ public class UserMenuActions {
         String statusMessage;
         if (currentBalance != -1) {
             statusMessage = "Your current balance is " + currentBalance;
+            System.out.println(Bank.getTransactionHistory(accountNumber));
         } else {
             statusMessage = "Sorry, we are unable to get current balance from your account. " +
                     "Please try again with correct information.";
